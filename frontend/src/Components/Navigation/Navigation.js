@@ -4,7 +4,8 @@ import avatar from '../../img/avatar.png'
 import { menuItems } from "../../utils/menuItems"
 import { signout } from "../../utils/Icons"
 
-function Navigation() {
+function Navigation({active, setActive}) {
+    
     return (
         <NavStyled>
             <div className="user-con">
@@ -18,6 +19,8 @@ function Navigation() {
                 {menuItems.map((item) => {
                     return <li 
                         key={item.id}
+                        onClick={() => setActive(item.id)}
+                        className={active === item.id ? 'active' : ''}
                     >
                         {item.icon}
                         <span>{item.title}</span>
@@ -65,6 +68,46 @@ const NavStyled = styled.nav`
         }
         p {
             color: rgba(34, 34, 96, 0.6);
+        }
+    }
+
+    .menu-items {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        li {
+            display: grid;
+            grid-template-columns: 40px auto;
+            align-items: center;
+            margin: 0.6rem 0;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all .4s ease-in-out;
+            color: rgba(34, 34, 96, 0.6);
+            padding-left: 1rem;
+            position: relative;
+            i{
+                color: rgba(34, 34, 96, 0.6);
+                padding-left: 1rem;
+                position: relative;
+            }
+        }
+    }
+    
+    .active {
+        color: rgba(34, 34, 96, 1);
+        i {
+            color: rgba(34, 34, 96, 1);
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #222260;
+            border-radius: 0 10px 10px 0;
         }
     }
 `;
