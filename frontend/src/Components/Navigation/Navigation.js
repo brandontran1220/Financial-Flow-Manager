@@ -84,7 +84,7 @@ const NavStyled = styled.nav`
             cursor: pointer;
             transition: all .4s ease-in-out;
             color: rgba(34, 34, 96, 0.6);
-            padding-left: 1rem;
+            padding-left: 0rem;
             position: relative;
             i{
                 color: rgba(34, 34, 96, 0.6);
@@ -95,9 +95,9 @@ const NavStyled = styled.nav`
     }
     
     .active {
-        color: rgba(34, 34, 96, 1);
+        color: rgba(34, 34, 96, 1) !important;
         i {
-            color: rgba(34, 34, 96, 1);
+            color: rgba(34, 34, 96, 1) !important;
         }
         &::before{
             content: "";
