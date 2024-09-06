@@ -15,6 +15,7 @@ function Income() {
                         <Form />
                     </div>
                     <div className="incomes">
+                        
                     </div>
                 </div>
             </InnerLayout>
