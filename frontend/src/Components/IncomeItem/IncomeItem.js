@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { calender, dollar, comment, trash, money, freelance, stocks, users, bitcoin, card, yt, piggy, book, food, medical, tv, takeaway, clothing, circle } from '../../utils/Icons'
 import Button from '../Button/Button';
+import { dateFormat } from '../../utils/dateFormat';
 
 function IncomeItem({
     id,
@@ -52,7 +53,7 @@ function IncomeItem({
                 return takeaway;
             case 'clothing':
                 return clothing;
-            case 'travelling':
+            case 'traveling':
                 return freelance;
             case 'other':
                 return circle;
@@ -60,7 +61,6 @@ function IncomeItem({
                 return ''
         }
     }
-
 
     return (
     <IncomeItemStyled indicator={indicatorColor}>
@@ -72,7 +72,7 @@ function IncomeItem({
             <div className="inner-content">
                 <div className="text">
                     <p>{dollar} {amount}</p>
-                    <p>{calender} {date}</p>
+                    <p>{calender} {dateFormat(date)}</p>
                     <p>
                         {comment} 
                         {description}

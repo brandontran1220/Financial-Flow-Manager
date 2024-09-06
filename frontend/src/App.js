@@ -27,11 +27,8 @@ function App() {
         return<Expenses />
       default: 
         return <Dashboard />
-
     }
   } 
-
-
 
   const orbMemo = useMemo(() => {
     return <Orb />
@@ -60,7 +57,6 @@ const AppStyled = styled.div`
     border: 3px solid #FFFFFF;
     backdrop-filter: blur(4.5px);
     border-radius: 32px;
-    overflow: auto;
     overflow-x: hidden;
     &::-webkit-scrollbar{
       width: 0;
