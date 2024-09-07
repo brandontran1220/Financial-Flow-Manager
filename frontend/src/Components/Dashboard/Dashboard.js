@@ -47,19 +47,19 @@ function Dashboard() {
                         <h2 className="salary-title">Min <span>Income</span>Max</h2>
                         <div className="salary-item">
                             <p>
-                                {Math.min(...incomes.map(item => item.amount))}
+                                {incomes.length ? Math.min(...incomes.map(item => item.amount)) : 0}
                             </p>
                             <p>
-                                {Math.max(...incomes.map(item => item.amount))}
+                                {incomes.length ? Math.max(...incomes.map(item => item.amount)) : 0}
                             </p>
                         </div>
                         <h2 className="salary-title">Min <span>Expense</span>Max</h2>
                         <div className="salary-item">
                             <p>
-                                {Math.min(...expenses.map(item => item.amount))}
+                                {expenses.length ? Math.min(...expenses.map(item => item.amount)) : 0}
                             </p>
                             <p>
-                                {Math.max(...expenses.map(item => item.amount))}
+                                {expenses.length ? Math.max(...expenses.map(item => item.amount)) : 0}
                             </p>
                         </div>
                     </div>
@@ -91,6 +91,15 @@ const DashboardStyled = styled.div`
                     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
                     border-radius: 20px;
                     padding: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;  /* Centers the content horizontally */
+                    text-align: center;     /* Centers the text */
+                    
+                    h2{
+                        margin-bottom: 1rem;  /* Adds some space between the title and value */
+                    }
                     p{
                         font-size: 3.5rem;
                         font-weight: 700;
