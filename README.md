@@ -22,5 +22,5 @@ The Expense page displays all of the user's recorded expense entries, each accom
 ![Expense](https://github.com/user-attachments/assets/dd93d087-49ca-4da8-810d-90acb9bad992)
 ## Acknowledgements
 
- - [The Code Dealer](https://www.youtube.com/watch?v=Rtpu2cWz7W8)
+ - [The Code Dealer](https://www.youtube.com/watch?v=i0JesTevAcA&list=LL&index=13)
 
