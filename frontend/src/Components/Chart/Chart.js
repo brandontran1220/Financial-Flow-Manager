@@ -29,8 +29,11 @@ ChartJs.register(
 function Chart() {
     const {incomes, expenses} = useGlobalContext()
 
+    const sortedIncomes = [...incomes].sort((a, b) => new Date(a.date) - new Date(b.date))
+    const sortedExpenses = [...expenses].sort((a, b) => new Date(a.date) - new Date(b.date))
+
     const data = {
-        labels: incomes.map((inc) => {
+        labels: sortedIncomes.map((inc) => {
             const {date} = inc
             return dateFormat(date)
         }),
@@ -38,7 +41,7 @@ function Chart() {
             {
                 label: 'Income',
                 data: [
-                    ...incomes.map((income) => {
+                    ...sortedIncomes.map((income) => {
                         const {amount} = income
                         return amount
                     })
@@ -49,7 +52,7 @@ function Chart() {
             {
                 label: 'Expenses',
                 data: [
-                    ...expenses.map((expense) => {
+                    ...sortedExpenses.map((expense) => {
                         const {amount} = expense
                         return amount
                     })
